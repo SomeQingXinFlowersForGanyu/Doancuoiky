@@ -1,0 +1,141 @@
+.detail_container {
+    background-color: white;
+    width: 90%;
+    height: 800px;   
+    margin: 5%;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.maybanhang{
+
+    display: inline-block; 
+    margin: 1.6%;
+}
+.maybanhang2{
+
+    display: inline-block; 
+    margin: 1.6%;
+}.maybanhang3{
+
+    display: inline-block; 
+    margin: 1.6%;
+}
+.ondisplay{
+    width:500px;
+  
+}
+.name_container{
+    width:100%;
+    display: inline-block; 
+}
+
+.namex{
+    width: 500px;
+    text-align: center;
+    margin: 1.6%;
+    display: inline-block; 
+    font-size: 20px;
+    font-weight: bold;
+    color: #00a86b;
+    /* margin-left: 10%; */
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .middle {   
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 20%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .middle2 {   
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 49%;
+    top: 58%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .middle3 {   
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 79%;
+    top: 58%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+
+  .maybanhang:hover .image {
+    opacity: 0.3;
+  }
+  
+  .maybanhang:hover .middle {
+    opacity: 1;
+  }
+  .maybanhang2:hover .image2 {
+    opacity: 0.3;
+  }
+  
+  .maybanhang2:hover .middle2 {
+    opacity: 1;
+  }  
+  .maybanhang3:hover .image3 {
+    opacity: 0.3;
+  }
+  
+  .maybanhang3:hover .middle3 {
+    opacity: 1;
+  } 
+
+  .text {
+    background-color: rgba(5, 5, 5, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 150px 32px;
+    height: 720px;
+  }
+
+  .text2{
+    background-color: rgba(5, 5, 5, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 150px 32px;
+    height: 720px;
+  }
+
+  .text3 {
+    background-color: rgba(5, 5, 5, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 150px 32px;
+    height: 720px;
+  }
+
+.detail{
+    background-color: white;
+    height: 10%;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+
+}
