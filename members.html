@@ -1,246 +1,129 @@
 <!DOCTYPE html>
-<html style="background-color: #EBEBEB;">
+<html >
 		<head>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="members.css">
 			<link rel="stylesheet" href="style.css">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 			<title>Các thành viên</title>
 		</head>
-	<body >
+	<body style="background-color: #e3e7eb;" >
+        <div>
 		<div id="header">
-			<div class="box">
-				<a href="https://www.ctu.edu.vn/" target="_blank"> <img src="picture\logo_ctu.png" alt="logo" width="100px" height="100px"></a>
-			</div>
-				<a class="tieude" href="#" target="_blank"><p>Hệ thống giám sát máy bán hàng tự động</p></a>
-		</div>
-        <nav>
+        <nav id = "nav">
         <ul>
+                <li><p class="title_p">Hệ thống giám sát máy bán hàng tự động</p></li>
                 <li><a href="index.html"><i class ="fa-solid fa-house"></i> Trang chủ</a></li>
                 <li><a class="active" href="members.html"><i class="fa-sharp fa-solid fa-users"></i> Thành viên</a></li>
                 <li><a href="hethonggiamsat.html"><i class="fa-solid fa-display"></i>  Hệ thống giám sát</a></li>
                 <li><a href="Lienhe.html"><i class="fa-solid fa-location-dot"></i> Liên hệ </a></li>
             </ul>
         </nav>  <!--end menu-->
-		<div style="background-color: #E5E0E5">
-            <h1 style="text-align: center; color: red">Các thành viên trong nhóm 1</h1>
-            <h3>Chọn thành viên để xem thông tin !</h3>
-            <select id="drop1" onclick="get_selection()" style= "width: 300px; margin-top: 20px; height: 30px;">
-                <option>Trần Minh Tấn</option>
-                <option>Nguyễn Qui Bình</option>
-                <option>Châu Khánh Vy</option>
-                <option>Vưu Thị Thanh Hảo</option>
-                <option>Nguyễn Ngọc Thanh Vy</option>
-                <option>Huỳnh Ngọc Đan Thanh</option>
-            </select>
-
-            <p><img id="img" src="picture\minhtan.png" alt="picture" width="400" height="400"></p>
-            <h2>Thông tin</h2>
-            <table id="myTable" cellspacing="0">
-              <tr>
-                <td>Họ và tên</td>
-                <td>Trần Minh Tấn</td>
-              </tr>
-              <tr>
-                <td>MSSV</td>
-                <td>B1907185</td>
-              </tr>
-              <tr>
-                <td>Ngành</td>
-                <td>Kỹ thuật cơ điện tử</td>
-              </tr>
-            </table>
-            <br>
-
-            <script>
-            function get_selection(){
-                x = document.getElementById("drop1").options;
-                var index1=0;
-                var index2=0;
-                var index3=0;
-                var index4=0;
-                var index5=0;
-                var index6=0;
-                switch (x.selectedIndex){
-                case 0:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Trần Minh Tấn";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B1907185";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Kỹ thuật cơ điện tử";
-
-                    document.getElementById('img').src="picture/minhtan.png"
-
-                    break;
-                case 1:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Nguyễn Qui Bình";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B1907106";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Kỹ thuật cơ điện tử";
-
-                    document.getElementById('img').src='picture/quibinh.png'
-
-                    break;
-                case 2:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Châu Khánh Vy";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B2011688";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Quản lý Công Nghiệp";
-
-                    document.getElementById('img').src='picture/khanhvy.png'
-
-                    break;
-                case 3:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Vưu Thị Thanh Hảo";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B2011718";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Quản lý công Nghiệp";
-
-                    document.getElementById('img').src='picture/thanhhao.png'
-
-                    break;
-                case 4:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Nguyễn Ngọc Thanh Vy";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B2011690";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Quản lý công Nghiệp";
-
-                    document.getElementById('img').src='picture/thanhvy.png'
-
-                    break;
-                case 5:
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-                    document.getElementById("myTable").deleteRow(0);
-
-                    var table = document.getElementById("myTable");
-
-                    var row0 = table.insertRow(0);
-                    var cell01 = row0.insertCell(0);
-                    var cell02 = row0.insertCell(1);
-
-                    var row1 = table.insertRow(1);
-                    var cell11 = row1.insertCell(0);
-                    var cell12 = row1.insertCell(1);
-
-                    var row2 = table.insertRow(2);
-                    var cell21 = row2.insertCell(0);
-                    var cell22 = row2.insertCell(1);
-
-                    cell01.innerHTML = "Họ và tên";
-                    cell02.innerHTML = "Huỳnh Ngọc Đan Thanh";
-                    cell11.innerHTML = "MSSV";
-                    cell12.innerHTML = "B2011761";
-                    cell21.innerHTML = "Ngành";
-                    cell22.innerHTML = "Quản lý công Nghiệp";
-
-                    document.getElementById('img').src='picture/danthanh.png'
-                    break;
-                }
-            }
-            </script>
         </div>
+</div>
+
+<div class="containerMem">
+    <div id="slide">
+
+        <div class="item" style="background-image: url(picture/danthanh.png);">
+            <div class="content">
+                <div class="name">HUỲNH NGỌC ĐAN THANH </div>
+                <div class="des">Mã số sinh viên: B2011761 
+                    <br> Chuyên Ngành: Quản lý công Nghiệp
+                    <br> Phân công: Tìm ý tưởng, tổng hợp ý kiến thành viên và viết báo cáo
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                
+                </div>
+               
+            </div>
         </div>
-		<div id="footer">
-			<p>KC326 Course &copy Nguyen Van Khanh - PLC&IoT Công nghiệp</p>
-		</div>
+        <div class="item" style="background-image: url(picture/khanhvy.png);">
+            <div class="content">
+                <div class="name">CHÂU KHÁNH VY</div>
+                <div class="des">Mã số sinh viên: B2011688 
+                    <br> Chuyên Ngành: Quản lý công Nghiệp
+                    <br> Phân công: Tìm ý tưởng, tìm kiếm thông tin và viết báo cáo
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                </div>
+                
+            </div>
+        </div>
+        <div class="item" style="background-image: url(picture/minhtan.png);">
+            <div class="content">
+                <div class="name">TRẦN MINH TẤN</div>
+                <div class="des">Mã số sinh viên: B1907185 
+                    <br> Chuyên Ngành:	Kỹ thuật cơ điện tử
+                    <br> Phân công:Tiếp nhận ý kiến thành viên, viết website và hỗ trợ viết báo cáo
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                </div>
+                
+            </div>
+        </div>
+        <div class="item" style="background-image: url(picture/thanhhao.png);">
+            <div class="content">
+                <div class="name">VƯU THỊ THANH HẢO</div>
+                <div class="des">Mã số sinh viên: B2011718 
+                    <br> Chuyên Ngành: Quản lý công Nghiệp
+                    <br> Phân công: Viết báo cáo, tìm thông tin và hỗ trợ website
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                </div>
+                
+            </div>
+        </div>
+        <div class="item" style="background-image: url(picture/thanhvy.png);">
+            <div class="content">
+                <div class="name">NGUYỄN NGỌC THANH VY</div>
+                <div class="des">Mã số sinh viên: B2011690 
+                    <br> Chuyên Ngành: Quản lý công Nghiệp
+                    <br> Phân công: Tìm ý tưởng, tìm kiếm thông tin và hỗ trợ website
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(picture/quibinh.png);">
+            <div class="content">
+                <div class="nameb">NGUYỄN QUI BÌNH</div>
+                <div class="desb">Mã số sinh viên: B1907106 
+                    <br> Chuyên Ngành:	Kỹ thuật cơ điện tử
+                    <br> Phân công:Tiếp nhận ý kiến thành viên, viết website và hỗ trợ viết báo cáo
+                    <br> Có tham gia làm đồ án
+                    <br> Hoàn thành công việc: 100%
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+        <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+</div>  
+    
+>
+
+
+        <div id="footer"><br><br>
+			<div class = "footer_l">
+				<p>Học phần:<br>KC326 - Công nghệ IoT và Ứng dụng</p>
+				<br>
+				<p>Đồ án cuối kỳ do sinh viên nhóm 1 thực hiện</p>
+				<br>
+				
+			</div>
+			<div class = "footer_r">
+				<p>Giảng viên hướng dẫn: <br>Nguyen Van Khanh - PLC&IoT Công nghiệp</p>
+				<br>
+				<p>Chúng em xin cảm ơn thầy!</p><br>
+			</div>
+			<p style="width: 100%; text-align: right;"> Đồ án cuối kỳ - học phần Công nghệ IoT và Ứng dụng</p>
+        </div>
 	</body>
+   <script src="script.js"></script>
 </html>
