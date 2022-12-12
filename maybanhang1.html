@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+			<title>hệ thống giám sát</title>
+		</head>
+	<body style="background-color: #e3e7eb;" >
+	
+		<div id="header">
+        <nav id = "nav">
+        	<ul>
+				<li><p class="title_p">Hệ thống giám sát máy bán hàng tự động</p></li>
+                <li><a href="index.html"><i class ="fa-solid fa-house"></i> Trang chủ</a></li>
+                <li><a href="members.html"><i class="fa-sharp fa-solid fa-users"></i> Thành viên</a></li>
+                <li><a class="active" href="dashboard.html"><i class="fa-solid fa-display"></i>  Hệ thống giám sát</a></li>
+                <li><a href="Lienhe.html"><i class="fa-solid fa-location-dot"></i> Liên hệ </a></li>
+            </ul>
+        </nav>  <!--end menu-->	
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+  <!-- lien ket voi functions.js -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDADSSzEbqzdlx0qQbmeV50o-2f-6lk34Q",
+      authDomain: "examble-36998.firebaseapp.com",
+      databaseURL: "https://examble-36998-default-rtdb.firebaseio.com",
+      projectId: "examble-36998",
+      storageBucket: "examble-36998.appspot.com",
+      messagingSenderId: "173279564310",
+      appId: "1:173279564310:web:10dde98f05e584a54c5b37",
+      measurementId: "G-VF2XRRCQ2P"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+   	firebase.analytics();
+
+   	var Soluong1 = document.getElementById('Soluong1');
+    	var dbRef = firebase.database().ref().child('Soluong1');
+    	dbRef.on('value', snap => Soluong1.innerText = snap.val());
+
+    var Soluong2 = document.getElementById('Soluong2');
+      var dbRef = firebase.database().ref().child('Soluong2');
+      dbRef.on('value', snap => Soluong2.innerText = snap.val());
+
+    var Soluong3 = document.getElementById('Soluong3');
+      var dbRef = firebase.database().ref().child('Soluong3');
+      dbRef.on('value', snap => Soluong3.innerText = snap.val());
+
+    var Nhietdo1 = document.getElementById('Nhietdo1');
+      var dbRef = firebase.database().ref().child('Nhietdo1');
+      dbRef.on('value', snap => Nhietdo1.innerText = snap.val());
+
+    var Nhietdo2 = document.getElementById('Nhietdo2');
+      var dbRef = firebase.database().ref().child('Nhietdo2');
+      dbRef.on('value', snap => Nhietdo2.innerText = snap.val());
+
+	 var Nhietdo3 = document.getElementById('Nhietdo3');
+	  var dbRef = firebase.database().ref().child('Nhietdo3');
+	  dbRef.on('value', snap => Nhietdo3.innerText = snap.val());
+
+     var Doam1 = document.getElementById('Doam1');
+      var dbRef = firebase.database().ref().child('Doam1');
+      dbRef.on('value', snap => Doam1.innerText = snap.val());
+
+     var Doam2 = document.getElementById('Doam2');
+      var dbRef = firebase.database().ref().child('Doam2');
+      dbRef.on('value', snap => Doam2.innerText = snap.val());
+
+     var Doam3 = document.getElementById('Doam3');
+      var dbRef = firebase.database().ref().child('Doam3');
+      dbRef.on('value', snap => Doam3.innerText = snap.val());
+
+     var Doanhthu1 = document.getElementById('Doanhthu1');
+      var dbRef = firebase.database().ref().child('Doanhthu1');
+      dbRef.on('value', snap => Doanhthu1.innerText = snap.val());
+
+      var Doanhthu2 = document.getElementById('Doanhthu2');
+      var dbRef = firebase.database().ref().child('Doanhthu2');
+      dbRef.on('value', snap => Doanhthu2.innerText = snap.val());
+
+      var Doanhthu3 = document.getElementById('Doanhthu3');
+      var dbRef = firebase.database().ref().child('Doanhthu3');
+      dbRef.on('value', snap => Doanhthu3.innerText = snap.val());
+	  /*---------------------------------------------------------*/
+	  var full1 = document.getElementById('full1');
+      var dbRef = firebase.database().ref().child('full1');
+      dbRef.on('value', snap => full1.innerText = snap.val());
+	  
+	  var full2 = document.getElementById('full2');
+      var dbRef = firebase.database().ref().child('full2');
+      dbRef.on('value', snap => full2.innerText = snap.val());
+	  
+	  var full3 = document.getElementById('full3');
+      var dbRef = firebase.database().ref().child('full3');
+      dbRef.on('value', snap => full3.innerText = snap.val());
+	  
+	  var sold1 = document.getElementById('sold1');
+      var dbRef = firebase.database().ref().child('sold1');
+      dbRef.on('value', snap => sold1.innerText = snap.val());
+	  
+	  var sold2 = document.getElementById('sold2');
+      var dbRef = firebase.database().ref().child('sold2');
+      dbRef.on('value', snap => sold2.innerText = snap.val());
+	  
+	  var sold3 = document.getElementById('sold3');
+      var dbRef = firebase.database().ref().child('sold3');
+      dbRef.on('value', snap => sold3.innerText = snap.val());
+	  
+	  var numberone1 = document.getElementById('numberone1');
+      var dbRef = firebase.database().ref().child('numberone1');
+      dbRef.on('value', snap => numberone1.innerText = snap.val());
+	  
+	  var numberone2 = document.getElementById('numberone2');
+      var dbRef = firebase.database().ref().child('numberone2');
+      dbRef.on('value', snap => numberone2.innerText = snap.val());
+	  
+	  var numberone3 = document.getElementById('numberone3');
+      var dbRef = firebase.database().ref().child('numberone3');
+      dbRef.on('value', snap => numberone3.innerText = snap.val());
+	  
+	  var daunanh1 = document.getElementById('daunanh1');
+      var dbRef = firebase.database().ref().child('daunanh1');
+      dbRef.on('value', snap => daunanh1.innerText = snap.val());
+	  
+	  var daunanh2 = document.getElementById('daunanh2');
+      var dbRef = firebase.database().ref().child('daunanh2');
+      dbRef.on('value', snap => daunanh2.innerText = snap.val());
+	  
+	  var daunanh3 = document.getElementById('daunanh3');
+      var dbRef = firebase.database().ref().child('daunanh3');
+      dbRef.on('value', snap => daunanh3.innerText = snap.val());
+	  
+	  var fanta1 = document.getElementById('fanta1');
+      var dbRef = firebase.database().ref().child('fanta1');
+      dbRef.on('value', snap => fanta1.innerText = snap.val());
+	  
+	  var fanta2 = document.getElementById('fanta2');
+      var dbRef = firebase.database().ref().child('fanta2');
+      dbRef.on('value', snap => fanta2.innerText = snap.val());
+	  
+	  var fanta3 = document.getElementById('fanta3');
+      var dbRef = firebase.database().ref().child('fanta3');
+      dbRef.on('value', snap => fanta3.innerText = snap.val());
+	  
+	  var bacsithanh1 = document.getElementById('bacsithanh1');
+      var dbRef = firebase.database().ref().child('bacsithanh1');
+      dbRef.on('value', snap => bacsithanh1.innerText = snap.val());
+	  
+	  var bacsithanh2 = document.getElementById('bacsithanh2');
+      var dbRef = firebase.database().ref().child('bacsithanh2');
+      dbRef.on('value', snap => bacsithanh2.innerText = snap.val());
+	  
+
+	  var bacsithanh3 = document.getElementById('bacsithanh3');
+      var dbRef = firebase.database().ref().child('bacsithanh3');
+      dbRef.on('value', snap => bacsithanh3.innerText = snap.val());
+	  
+	  var sprite1 = document.getElementById('sprite1');
+      var dbRef = firebase.database().ref().child('sprite1');
+      dbRef.on('value', snap => sprite1.innerText = snap.val());
+	  
+	  var sprite2 = document.getElementById('sprite2');
+      var dbRef = firebase.database().ref().child('sprite2');
+      dbRef.on('value', snap => sprite2.innerText = snap.val());
+	  
+	  var sprite3 = document.getElementById('sprite3');
+      var dbRef = firebase.database().ref().child('sprite3');
+      dbRef.on('value', snap => sprite3.innerText = snap.val());
+	  
+	  var olongn1 = document.getElementById('olongn1');
+      var dbRef = firebase.database().ref().child('olongn1');
+      dbRef.on('value', snap => olongn1.innerText = snap.val());
+	  
+	  var olongn2 = document.getElementById('olongn2');
+      var dbRef = firebase.database().ref().child('olongn2');
+      dbRef.on('value', snap => olongn2.innerText = snap.val());
+	  
+	  var olongn3 = document.getElementById('olongn3');
+      var dbRef = firebase.database().ref().child('olongn3');
+      dbRef.on('value', snap => olongn3.innerText = snap.val());
+	  
+	  var revive1 = document.getElementById('revive1');
+      var dbRef = firebase.database().ref().child('revive1');
+      dbRef.on('value', snap => revive1.innerText = snap.val());
+	  
+	  var revive2 = document.getElementById('revive2');
+      var dbRef = firebase.database().ref().child('revive2');
+      dbRef.on('value', snap => revive2.innerText = snap.val());
+	  
+	  var revive3 = document.getElementById('revive3');
+      var dbRef = firebase.database().ref().child('revive3');
+      dbRef.on('value', snap => revive3.innerText = snap.val());
+	  
+	  var xaxi1 = document.getElementById('xaxi1');
+      var dbRef = firebase.database().ref().child('xaxi1');
+      dbRef.on('value', snap => xaxi1.innerText = snap.val());
+	  
+	  var xaxi2 = document.getElementById('xaxi2');
+      var dbRef = firebase.database().ref().child('xaxi2');
+      dbRef.on('value', snap => xaxi2.innerText = snap.val());
+	  
+	  var xaxi3 = document.getElementById('xaxi3');
+      var dbRef = firebase.database().ref().child('xaxi3');
+      dbRef.on('value', snap => xaxi3.innerText = snap.val());
+	  
+	  var poca1 = document.getElementById('poca1');
+      var dbRef = firebase.database().ref().child('poca1');
+      dbRef.on('value', snap => poca1.innerText = snap.val());
+	  
+	  var poca2 = document.getElementById('poca2');
+      var dbRef = firebase.database().ref().child('poca2');
+      dbRef.on('value', snap => poca2.innerText = snap.val());
+	  
+	  var poca3 = document.getElementById('poca3');
+      var dbRef = firebase.database().ref().child('poca3');
+      dbRef.on('value', snap => poca3.innerText = snap.val());
+	  
+	  var swing1 = document.getElementById('swing1');
+      var dbRef = firebase.database().ref().child('swing1');
+      dbRef.on('value', snap => swing1.innerText = snap.val());
+	  
+	  var swing2 = document.getElementById('swing2');
+      var dbRef = firebase.database().ref().child('swing2');
+      dbRef.on('value', snap => swing2.innerText = snap.val());
+	  
+	  var swing3 = document.getElementById('swing3');
+      var dbRef = firebase.database().ref().child('swing3');
+      dbRef.on('value', snap => swing3.innerText = snap.val());
+	  
+	  var lays1 = document.getElementById('lays1');
+      var dbRef = firebase.database().ref().child('lays1');
+      dbRef.on('value', snap => lays1.innerText = snap.val());
+	  
+	  var lays2 = document.getElementById('lays2');
+      var dbRef = firebase.database().ref().child('lays2');
+      dbRef.on('value', snap => lays2.innerText = snap.val());
+	  
+	  var lays3 = document.getElementById('lays3');
+      var dbRef = firebase.database().ref().child('lays3');
+      dbRef.on('value', snap => lays3.innerText = snap.val());
+	  
+	  var tomcay1 = document.getElementById('tomcay1');
+      var dbRef = firebase.database().ref().child('tomcay1');
+      dbRef.on('value', snap => tomcay1.innerText = snap.val());
+	  
+	  var tomcay2 = document.getElementById('tomcay2');
+      var dbRef = firebase.database().ref().child('tomcay2');
+      dbRef.on('value', snap => tomcay2.innerText = snap.val());
+
+	  var tomcay3 = document.getElementById('tomcay3');
+      var dbRef = firebase.database().ref().child('tomcay3');
+      dbRef.on('value', snap => tomcay3.innerText = snap.val());
+
+	  var bido1 = document.getElementById('bido1');
+      var dbRef = firebase.database().ref().child('bido1');
+      dbRef.on('value', snap => bido1.innerText = snap.val());
+	  
+	  var bido2 = document.getElementById('bido2');
+      var dbRef = firebase.database().ref().child('bido2');
+      dbRef.on('value', snap => bido2.innerText = snap.val());
+	  
+	  var bido3 = document.getElementById('bido3');
+      var dbRef = firebase.database().ref().child('bido3');
+      dbRef.on('value', snap => bido3.innerText = snap.val());
+	  
+	  var phomat1 = document.getElementById('phomat1');
+      var dbRef = firebase.database().ref().child('phomat1');
+      dbRef.on('value', snap => phomat1.innerText = snap.val());
+	  
+	  var phomat2 = document.getElementById('phomat2');
+      var dbRef = firebase.database().ref().child('phomat2');
+      dbRef.on('value', snap => phomat2.innerText = snap.val());
+
+	  var phomat3 = document.getElementById('phomat3');
+      var dbRef = firebase.database().ref().child('phomat3');
+      dbRef.on('value', snap => phomat3.innerText = snap.val());
+	  
+	  var chay1 = document.getElementById('chay1');
+      var dbRef = firebase.database().ref().child('chay1');
+      dbRef.on('value', snap => chay1.innerText = snap.val());
+	  
+	  var chay2 = document.getElementById('chay2');
+      var dbRef = firebase.database().ref().child('chay2');
+      dbRef.on('value', snap => chay2.innerText = snap.val());
+	  
+	  var chay3 = document.getElementById('chay3');
+      var dbRef = firebase.database().ref().child('chay3');
+      dbRef.on('value', snap => chay3.innerText = snap.val());
+	  
+	  var aquafina1 = document.getElementById('aquafina1');
+      var dbRef = firebase.database().ref().child('aquafina1');
+      dbRef.on('value', snap => aquafina1.innerText = snap.val());
+	  
+	  var aquafina2 = document.getElementById('aquafina2');
+      var dbRef = firebase.database().ref().child('aquafina2');
+      dbRef.on('value', snap => aquafina2.innerText = snap.val());
+	  
+	  var aquafina3 = document.getElementById('aquafina3');
+      var dbRef = firebase.database().ref().child('aquafina3');
+      dbRef.on('value', snap => aquafina3.innerText = snap.val());
+	  
+	  var traxanh1 = document.getElementById('traxanh1');
+      var dbRef = firebase.database().ref().child('traxanh1');
+      dbRef.on('value', snap => traxanh1.innerText = snap.val());
+	  
+	  var traxanh2 = document.getElementById('traxanh2');
+      var dbRef = firebase.database().ref().child('traxanh2');
+      dbRef.on('value', snap => traxanh2.innerText = snap.val());
+	  
+	  var traxanh3 = document.getElementById('traxanh3');
+      var dbRef = firebase.database().ref().child('traxanh3');
+      dbRef.on('value', snap => traxanh3.innerText = snap.val());
+	  
+	  var goodmood1 = document.getElementById('goodmood1');
+      var dbRef = firebase.database().ref().child('goodmood1');
+      dbRef.on('value', snap => goodmood1.innerText = snap.val());
+	  
+	  var goodmood2 = document.getElementById('goodmood2');
+      var dbRef = firebase.database().ref().child('goodmood2');
+      dbRef.on('value', snap => goodmood2.innerText = snap.val());
+	  
+	  var goodmood3 = document.getElementById('goodmood3');
+      var dbRef = firebase.database().ref().child('goodmood3');
+      dbRef.on('value', snap => goodmood3.innerText = snap.val());
+	  
+	  var sting1 = document.getElementById('sting1');
+      var dbRef = firebase.database().ref().child('sting1');
+      dbRef.on('value', snap => sting1.innerText = snap.val());
+	  
+	  var sting2 = document.getElementById('sting2');
+      var dbRef = firebase.database().ref().child('sting2');
+      dbRef.on('value', snap => sting2.innerText = snap.val());
+	  
+	  var sting3 = document.getElementById('sting3');
+      var dbRef = firebase.database().ref().child('sting3');
+      dbRef.on('value', snap => sting3.innerText = snap.val());
+	  
+	  var wakeup1 = document.getElementById('wakeup1');
+      var dbRef = firebase.database().ref().child('wakeup1');
+      dbRef.on('value', snap => wakeup1.innerText = snap.val());
+	  
+	  var wakeup2 = document.getElementById('wakeup2');
+      var dbRef = firebase.database().ref().child('wakeup2');
+      dbRef.on('value', snap => wakeup2.innerText = snap.val());
+	  
+	  var wakeup3 = document.getElementById('wakeup3');
+      var dbRef = firebase.database().ref().child('wakeup3');
+      dbRef.on('value', snap => wakeup3.innerText = snap.val());
+	  
+	  var up1 = document.getElementById('up1');
+      var dbRef = firebase.database().ref().child('up1');
+      dbRef.on('value', snap => up1.innerText = snap.val());
+	  
+	  var up2 = document.getElementById('up2');
+      var dbRef = firebase.database().ref().child('up2');
+      dbRef.on('value', snap => up2.innerText = snap.val());
+	  
+	  var up3 = document.getElementById('up3');
+      var dbRef = firebase.database().ref().child('up3');
+      dbRef.on('value', snap => up3.innerText = snap.val());
+	  
+	  var pepsi1 = document.getElementById('pepsi1');
+      var dbRef = firebase.database().ref().child('pepsi1');
+      dbRef.on('value', snap => pepsi1.innerText = snap.val());
+	  
+	  var pepsi2 = document.getElementById('pepsi2');
+      var dbRef = firebase.database().ref().child('pepsi2');
+      dbRef.on('value', snap => pepsi2.innerText = snap.val());
+	  
+	  var pepsi3 = document.getElementById('pepsi3');
+      var dbRef = firebase.database().ref().child('pepsi3');
+      dbRef.on('value', snap => pepsi3.innerText = snap.val());
+	  
+	  var sodakem1 = document.getElementById('sodakem1');
+      var dbRef = firebase.database().ref().child('sodakem1');
+      dbRef.on('value', snap => sodakem1.innerText = snap.val());
+	  
+	  var sodakem2 = document.getElementById('sodakem2');
+      var dbRef = firebase.database().ref().child('sodakem2');
+      dbRef.on('value', snap => sodakem2.innerText = snap.val());
+	  
+	  var sodakem3 = document.getElementById('sodakem3');
+      var dbRef = firebase.database().ref().child('sodakem3');
+      dbRef.on('value', snap => sodakem3.innerText = snap.val());
+	  
+	  var redbull1 = document.getElementById('redbull1');
+      var dbRef = firebase.database().ref().child('redbull1');
+      dbRef.on('value', snap => redbull1.innerText = snap.val());
+	  
+	  var redbull2 = document.getElementById('redbull2');
+      var dbRef = firebase.database().ref().child('redbull2');
+      dbRef.on('value', snap => redbull2.innerText = snap.val());
+	  
+	  var redbull3 = document.getElementById('redbull3');
+      var dbRef = firebase.database().ref().child('redbull3');
+      dbRef.on('value', snap => redbull3.innerText = snap.val());
+	  
+	  var compact1 = document.getElementById('compact1');
+      var dbRef = firebase.database().ref().child('compact1');
+      dbRef.on('value', snap => compact1.innerText = snap.val());
+	  
+	  var compact2 = document.getElementById('compact2');
+      var dbRef = firebase.database().ref().child('compact2');
+      dbRef.on('value', snap => compact2.innerText = snap.val());
+	  
+	  var compact3 = document.getElementById('compact3');
+      var dbRef = firebase.database().ref().child('compact3');
+      dbRef.on('value', snap => compact3.innerText = snap.val());
+	  
+	  var Warrior1 = document.getElementById('Warrior1');
+      var dbRef = firebase.database().ref().child('Warrior1');
+      dbRef.on('value', snap => Warrior1.innerText = snap.val());
+	  
+	  var Warrior2 = document.getElementById('Warrior2');
+      var dbRef = firebase.database().ref().child('Warrior2');
+      dbRef.on('value', snap => Warrior2.innerText = snap.val());
+	  
+	  var Warrior3 = document.getElementById('Warrior3');
+      var dbRef = firebase.database().ref().child('Warrior3');
+      dbRef.on('value', snap => Warrior3.innerText = snap.val());
+	  
+	  var C2chanh1 = document.getElementById('C2chanh1');
+      var dbRef = firebase.database().ref().child('C2chanh1');
+      dbRef.on('value', snap => C2chanh1.innerText = snap.val());
+	  
+	  var C2chanh2 = document.getElementById('C2chanh2');
+      var dbRef = firebase.database().ref().child('C2chanh2');
+      dbRef.on('value', snap => C2chanh2.innerText = snap.val());
+	  
+	  var C2chanh3 = document.getElementById('C2chanh3');
+      var dbRef = firebase.database().ref().child('C2chanh3');
+      dbRef.on('value', snap => C2chanh3.innerText = snap.val());
+	  
+	  var C2dau1 = document.getElementById('C2dau1');
+      var dbRef = firebase.database().ref().child('C2dau1');
+      dbRef.on('value', snap => C2dau1.innerText = snap.val());
+	  
+	  var C2dau2 = document.getElementById('C2dau2');
+      var dbRef = firebase.database().ref().child('C2dau2');
+      dbRef.on('value', snap => C2dau2.innerText = snap.val());
+	  
+	  var C2dau3 = document.getElementById('C2dau3');
+      var dbRef = firebase.database().ref().child('C2dau3');
+      dbRef.on('value', snap => C2dau3.innerText = snap.val());
+	  
+	  var twister1 = document.getElementById('twister1');
+      var dbRef = firebase.database().ref().child('twister1');
+      dbRef.on('value', snap => twister1.innerText = snap.val());
+	  
+	  var twister2 = document.getElementById('twister2');
+      var dbRef = firebase.database().ref().child('twister2');
+      dbRef.on('value', snap => twister2.innerText = snap.val());
+	  
+	  var twister3 = document.getElementById('twister3');
+      var dbRef = firebase.database().ref().child('twister3');
+      dbRef.on('value', snap => twister3.innerText = snap.val());
+	  
+	  var cocacola1 = document.getElementById('cocacola1');
+      var dbRef = firebase.database().ref().child('cocacola1');
+      dbRef.on('value', snap => cocacola1.innerText = snap.val());
+	  
+	  var cocacola2 = document.getElementById('cocacola2');
+      var dbRef = firebase.database().ref().child('cocacola2');
+      dbRef.on('value', snap => cocacola2.innerText = snap.val());
+	  
+	  var cocacola3 = document.getElementById('cocacola3');
+      var dbRef = firebase.database().ref().child('cocacola3');
+      dbRef.on('value', snap => cocacola3.innerText = snap.val());
+	  var trangthai1 = document.getElementById('trangthai1');
+      var dbRef = firebase.database().ref().child('trangthai1');
+      dbRef.on('value', snap => trangthai1.innerText = snap.val());
+	  var trangthai2 = document.getElementById('trangthai2');
+      var dbRef = firebase.database().ref().child('trangthai2');
+      dbRef.on('value', snap => trangthai2.innerText = snap.val());
+	  var trangthai3 = document.getElementById('trangthai3');
+      var dbRef = firebase.database().ref().child('trangthai3');
+      dbRef.on('value', snap => trangthai3.innerText = snap.val());
+  </script>
+  </div>
+	<div class="hang1">
+		<h1 style="text-align: center;">THÔNG TIN CHI TIẾT MÁY BÁN HÀNG 1</h1>
+		<div class = "may1">
+			<div class = "title">
+				<h1>SỐ LƯỢNG CÁC MẶT HÀNG <br><br> CÒN LẠI</h1><br>
+				
+			</div>
+			<div class = "noidung">
+				<p>- Number one: <span id = "numberone1"></span> chai</p><br>
+				<p>- Sữa đậu nành: <span id = "daunanh1"></span> chai</p><br>
+				<p>- Fanta: <span id = "fanta1"></span> lon</p><br>
+				<p>- Dr.Thanh: <span id = "bacsithanh1"></span> chai</p><br>
+				<p>- sprite: <span id = "sprite1"></span> lon</p><br>
+				<p>- Tea ô long: <span id = "olongn1"></span> chai</p><br>
+				<p>- Revive: <span id = "revive1"></span> chai</p><br>
+				<p>- Mirida Xá xị: <span id = "xaxi1"></span> chai</p><br>
+				<p>- Snack Poca: <span id = "poca1"></span> gói</p><br>
+				<p>- Snack swing: <span id = "swing1"></span> gói</p><br>
+				<p>- Snack Lay's: <span id = "lays1"></span> gói</p><br>
+				<p>- Osi snack Tôm cay: <span id = "tomcay1"></span> gói</p><br>
+				<p>- Snack Bí đỏ: <span id = "bido1"></span> gói</p><br>
+				<p>- Snack PhoMat miếng: <span id = "phomat1"></span> gói</p><br>
+				<p>- Snack Chay: <span id = "chay1"></span> gói</p><br>
+			</div>
+		</div>
+
+		<div class = "may1">
+			<div class = "title">
+				<h1 > <br>CÁC THÔNG SỐ TỔNG QUÁT <br><br> </h1><br>
+			</div>
+			<div class = "noidung">	
+				<p> - Số lượng sản phẩm chứa tối đa: <span id= "full1"></span> sản phẩm.</p><br>
+				<p> - Số lượng đã bán đã được bán: <span id= "sold1"></span> sản phẩm.</p><br>
+				<p> - Tổng số lượng còn lại: <span id= "Soluong1"></span> sản phẩm.</p><br>
+				<p> - Nhiệt độ hiện tại: <span id = "Nhietdo1"></span> độ C.</p><br>
+				<p> - Độ ẩm hiện tại: <span id= "Doam1"></span> %</p><br>
+				<p> - Tình trạng hoạt động hiện tại của máy:  <span id= "trangthai1"></span></p><br>
+				<p> - Doanh thu hiện tại trong ngày: <span id= "Doanhthu1"></span> nghìn đồng. </p><br>
+			</div>
+		</div>
+		
+		<div class = "may1">
+			<div class = "title">
+				<h1>SỐ LƯỢNG CÁC MẶT HÀNG <br><br>  CÒN LẠI</h1><br>
+			</div>
+			<div class = "noidung">
+				<p>- Aquafina: <span id= "aquafina1"></span> chai</p><br>
+				<p>- Trà xanh 0 độ: <span id= "traxanh1"></span> chai</p><br>
+				<p>- Goodmood dâu: <span id= "goodmood1"></span> chai</p><br>
+				<p>- Sting dâu: <span id = "sting1"></span> chai</p> <br>
+				<p>- Wake up 247: <span id = "wakeup1"></span> chai</p><br>
+				<p>- 7 Up:<span id = "up1"></span> chai</p><br>
+				<p>- Pepsi: <span id = "pepsi1"></span> lon</p><br>
+				<p>- Mirinda Soda kem: <span id = "sodakem1"></span> lon</p><br>
+				<p>- Redbull: <span id = "redbull1"></span> lon</p><br>
+				<p>- Compact <span id= "compact1"></span> lon</p><br>
+				<p>- Warrior: <span id= "Warrior1"></span> lon</p><br>
+				<p>- C2 hương chanh: <span id = "C2chanh1"></span> chai</p><br>
+				<p>- C2 hương dâu: <span id = "C2dau1"></span> chai</p><br>
+				<p>- Nước cam ép Twister: <span id = "twister1"></span> chai</p><br>
+				<p>- Coca cola: <span id = "cocacola1"></span> lon</p><br>
+			</div>
+		</div>
+	</div>
+	<div id="footer"><br><br>
+		<div class = "footer_l">
+			<p>Học phần:<br>KC326 - Công nghệ IoT và Ứng dụng</p>
+			<br>
+			<p>Đồ án cuối kỳ do sinh viên nhóm 1 thực hiện</p>
+			<br>
+		</div>
+		<div class = "footer_r">
+			<p>Giảng viên hướng dẫn: <br>Nguyen Van Khanh - PLC&IoT Công nghiệp</p>
+			<br>
+			<p>Chúng em xin cảm ơn thầy!</p><br>
+		</div>
+		<p style="width: 100%; text-align: right;"> Đồ án cuối kỳ - học phần Công nghệ IoT và Ứng dụng</p>
+	</div>
+
+	</body>
+</html>
